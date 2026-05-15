@@ -15,7 +15,7 @@ class University(models.Model):
 
 class Faculty(models.Model):
     name = models.CharField(max_length=100)
-    university = models.ForeignKey(University, max_length=100, on_delete=models.CASCADE)
+    university = models.ForeignKey(University, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.university.name} - {self.name}'

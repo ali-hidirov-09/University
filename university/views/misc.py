@@ -1,16 +1,12 @@
-from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
-
-from university.serializers import *
-from university.models import University, Faculty, Kafedra
+from university.models import University, Faculty, Kafedra, Subject, Group
+from university.serializers import UniversitySerializer, FacultySerializer, KafedraSerializer, SubjectSerializer, \
+    GroupSerializer
 from rest_framework import viewsets, filters
 from django_filters import rest_framework as dr
+from university.views.grade import CustomPagination
 from university.permissions import IsStaffOrReadOnly
-from university.filters import *
-
-
-class CustomPagination(PageNumberPagination):
-    page_size = 5
+from university.filters import FacultyFilter, KafedraFilter, SubjectFilter, GroupFilter
 
 
 class UniversityViewsSet(viewsets.ModelViewSet):
