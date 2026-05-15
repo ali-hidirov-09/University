@@ -32,7 +32,6 @@ class TeacherSerializer(serializers.ModelSerializer):
 
 
     def create(self, validated_data):
-        request = self.context['request']
         target_user_id = validated_data.pop('user_id')
         kafedra = validated_data.pop('kafedra')
 

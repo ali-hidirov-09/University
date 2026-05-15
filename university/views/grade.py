@@ -1,11 +1,9 @@
-from rest_framework.exceptions import ValidationError
 from rest_framework.pagination import PageNumberPagination
 from university.serializers import *
 from university.models import Grade, Teacher, Student
 from rest_framework import viewsets, filters
 from django_filters import rest_framework as dr
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
-from university.filters import *
+from university.filters import TeacherFilter, StudentFilter, GradeFilter
 from university.permissions import IsStaffOrReadOnly, IsTeacherOrReadOnly
 
 
